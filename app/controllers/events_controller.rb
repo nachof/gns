@@ -72,7 +72,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.xml
   def destroy
-    @event = Event.find(params[:id])
+    @event = current_user.created_events.find(params[:id])
     @event.destroy
 
     respond_to do |format|
