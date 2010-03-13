@@ -17,7 +17,7 @@
       %td= event.location
       %td= event.start_at
       %td= event.end_at
-      %td= event.description
+      %td= markdown event.description
       %td= link_to 'Show', event
       %td= link_to 'Edit', edit_event_path(event)
       %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
