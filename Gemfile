@@ -10,5 +10,5 @@ gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
 group 'test' do
   gem 'rspec-rails', '>= 2.0.0.beta.1'
-  gem 'machinist'
+  gem 'machinist', :require => 'machinist/active_record'
 end

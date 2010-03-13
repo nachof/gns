@@ -16,6 +16,8 @@ dependencies:
     group: 
     - :test
     version: ">= 0"
+    require: 
+    - machinist/active_record
   rspec-rails: 
     group: 
     - :test
@@ -108,7 +110,7 @@ specs:
     version: 0.9.7
 - nokogiri: 
     version: 1.4.1
-hash: 3b1edfd9a7ee4c2e3775b42e2b0f5c2fe3fc6856
+hash: 0436851b3e8175ae7f3d0e389c7d4c67bf684ee1
 sources: 
 - Git: 
     uri: git://github.com/plataformatec/devise.git
