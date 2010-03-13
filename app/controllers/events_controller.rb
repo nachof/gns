@@ -34,13 +34,13 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = Event.find(params[:id])
+    @event = current_user.created_events.find(params[:id])
   end
 
   # POST /events
   # POST /events.xml
   def create
-    @event = Event.new(params[:event])
+    @event = current_user.created_events.new(params[:event])
 
     respond_to do |format|
       if @event.save
@@ -56,7 +56,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = Event.find(params[:id])
+    @event = current_user.created_events.find(params[:id])
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
