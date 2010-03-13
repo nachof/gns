@@ -1,0 +1,23 @@
+%h2 Editar Usuario
+
+= form_for(resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = f.error_messages
+
+  = f.text_group :email
+
+  = f.password_group :password, "Contraseña", :hint => "Dejala en blanco si no querés cambiarla"
+
+  = f.password_group :password_confirmation, "Confirmar Contraseña"
+
+  = f.password_group :current_password, "Contraseña actual", :hint => "Necesitamos tu contraseña actual para confirmar tus cambios"
+
+  = f.submit_group "Actualizar"
+
+
+%h3 Borrar mi cuenta
+
+%p
+  ¿Estás harto de nosotros?
+  = link_to "Cancelar mi cuenta", registration_path(resource_name), :confirm => "¿Estás seguro?", :method => :delete
+
+= link_to "Back", :back

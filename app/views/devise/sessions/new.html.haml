@@ -1,0 +1,12 @@
+%h2 Iniciar Sesión
+
+= form_for(resource_name, resource, :url => session_path(resource_name)) do |f|
+  = f.text_group :email
+
+  = f.password_group :password, "Contraseña"
+
+  = f.check_box_group :remember_me, "No me olvides"
+
+  = f.submit_group "Sign in"
+
+= render :partial => "devise/shared/links"
