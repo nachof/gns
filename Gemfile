@@ -5,6 +5,8 @@ gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
