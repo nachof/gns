@@ -1,15 +1,13 @@
-%h1= @event.name
+%section.info
+  %h1= @event.name
 
-%h2 Cuándo?
-%p= schedule_for @event
+  - if @event.creator == current_user
+    = link_to 'Edit', edit_event_path(@event)
 
-%h2 Dónde?
-%p= @event.location
+  %h2 Cuándo?
+  %p= schedule_for(@event).humanize
 
-= markdown @event.description
+  %h2 Dónde?
+  %p= @event.location
 
-- if @event.creator == current_user
-  = link_to 'Edit', edit_event_path(@event)
-  \|
-
-= link_to 'Back', events_path
+  = markdown @event.description

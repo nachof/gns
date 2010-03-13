@@ -1,0 +1,5 @@
+= content_tag_for :li, event do
+  %strong= link_to event.name, event
+  %span.info
+    == en #{event.location},
+    = schedule_for event

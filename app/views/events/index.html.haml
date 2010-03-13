@@ -1,24 +1,7 @@
+- content_for :sidebar do
+  = link_to "Nuevo Evento", new_event_path, :class => "button"
+
 %h1 Futuros eventos
 
-%table
-  %tr
-    %th Nombre
-    %th ¿Dónde es?
-    %th ¿Cuándo es?
-    %th ¿Cuándo termina?
-    %th
-    %th
-
-  - @events.each do |event|
-    %tr
-      %td= link_to event.name, event
-      %td= event.location
-      %td= event.start_at
-      %td= event.end_at
-      - if event.creator == current_user
-        %td= link_to 'Editar', edit_event_path(event)
-        %td= link_to 'Eliminar', event, :confirm => '¿Estás seguro?', :method => :delete
-
-%br
-
-= link_to 'Crear un nuevo evento', new_event_path
+%ol#events
+  = render @events

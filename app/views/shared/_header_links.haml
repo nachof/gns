@@ -1,0 +1,12 @@
+.header_links
+  - if user_signed_in?
+    = succeed " | " do
+      == Bienvenido #{current_user.full_name}
+    = link_to "Cerrar Sesión", destroy_user_session_path
+  - else
+    Hola!
+    = succeed " | " do
+      = link_to "Iniciar Sesión", new_user_session_path
+    = link_to "Crear Cuenta", new_user_registration_path
+
+
