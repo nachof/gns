@@ -1,0 +1,9 @@
+= form_for @event do |f|
+  = f.error_messages
+  = f.text_group :name,             "Nombre"
+  = f.text_group :location,         "Lugar"
+  = f.date_group :start_at,         "Fecha/hora de comienzo"
+  = f.date_group :end_at,           "Fecha/hora de fin"
+  = f.text_area_group :description, "Descripción"
+
+  = f.submit_group "Guardar Evento"

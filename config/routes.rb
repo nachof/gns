@@ -1,5 +1,5 @@
 GamingNightSociety::Application.routes.draw do |map|
   devise_for :users
-
-  map.root :controller => :pages, :action => :root
+  resources :events
+  map.root :to => "pages#root"
 end

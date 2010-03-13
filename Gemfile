@@ -14,3 +14,7 @@ group 'test' do
   gem 'rspec-rails', '>= 2.0.0.beta.1'
   gem 'machinist', :require => 'machinist/active_record'
 end
+
+group 'development', 'test' do
+  gem 'ruby-debug'
+end

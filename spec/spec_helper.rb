@@ -8,8 +8,9 @@ Machinist.load_blueprints
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/blueprints/*.rb"].each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 Rspec.configure do |config|
   config.mock_with :rspec
+  config.include Rspec::Support::ControllerHelpers
 end
