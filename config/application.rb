@@ -32,6 +32,7 @@ module GamingNightSociety
     # Configure generators values. Many other options are available, be sure to check the documentation.
     config.generators do |g|
       g.fixture_replacement :machinist, :dir => 'spec/blueprints'
+      g.template_engine :haml
     end
 
     # Configure sensitive parameters which will be filtered from the log file.
