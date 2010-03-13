@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :creator, :class_name => "User"
   has_many :invitations, :dependent => :destroy
+  has_many :invitees, :through => :invitations, :source => :user
 
   validates :name,     :presence => true
   validates :location, :presence => true
